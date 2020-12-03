@@ -41,6 +41,23 @@ h2 {
     display: none!important;
 }
 
+.quiz__progressbar {
+    position: relative;
+    overflow: hidden;
+    background: #ccc;
+    height: 4px;
+    border-radius: 2px;
+    margin-bottom: 40px;
+}
+
+.quiz__progressbar-value {
+    width: 0;
+    height: 100%;
+    background: #06c668;
+    border-radius: 2px;
+    transition: width .2s ease;
+}
+
 .quiz__questionare {
     display: flex;
     flex-direction: column;

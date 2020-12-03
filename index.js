@@ -8,6 +8,7 @@ const Page = {
     ui: {
         quizQuestionare: document.querySelector('.js-quiz-questionare'),
         quizResult: document.querySelector('.js-quiz-result'),
+        quizProgress: document.querySelector('.js-quiz-progressbar'),
         questionsList: document.querySelector('.js-questions-list'),
         questions: [],
         goButton: document.querySelector('.js-go-button'),
@@ -64,6 +65,11 @@ const Page = {
         Page.ui.questionsList.append(fragment);
     },
 
+    updateProgress: () => {
+        const procent = Page.state.currentQuestion === null ? 100 : Page.state.currentQuestion / Page.state.questions.length * 100;
+        Page.ui.quizProgress.style.width = procent + '%';
+    },
+
     showPreviousQuestion: () => {
         Page.ui.error.classList.add('hidden');
 
@@ -89,6 +95,8 @@ const Page = {
     },
 
     showResult: () => {
+        Page.state.currentQuestion = null;
+
         Page.ui.quizQuestionare.classList.add('hidden');
         Page.ui.quizResult.classList.remove('hidden');
     },
@@ -101,9 +109,14 @@ const Page = {
             }
 
             Page.state.currentQuestion + 1 < Page.state.questions.length ? Page.showNextQuestion() : Page.showResult();
+
+            Page.updateProgress();
         });
 
-        Page.ui.backButton.addEventListener('click', () => Page.showPreviousQuestion());
+        Page.ui.backButton.addEventListener('click', () => {
+            Page.showPreviousQuestion();
+            Page.updateProgress();
+        });
     },
 
     onInit: async () => {
