@@ -9,6 +9,7 @@ body {
     height: 100%;
     box-sizing: border-box;
     display: flex;
+    min-width: 320px;
 }
 
 h2 {
@@ -134,7 +135,6 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 .question__title {
@@ -173,7 +173,7 @@ h2 {
     }
 
     .quiz__questions-list {
-        height: 450px;
+        height: 440px;
     }
 
     .question__title {
