@@ -27,6 +27,7 @@ const Page = {
         Page.state.questions.forEach((questionProps, questionId) => {
             Page.ui.questions[questionId] = document.createElement('div');
             Page.ui.questions[questionId].classList.add('question');
+            Page.ui.questions[questionId].classList.add('visibility-animated');
 
             if (questionId !== Page.state.currentQuestion)
                 Page.ui.questions[questionId].classList.add('hidden');
