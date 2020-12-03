@@ -1,13 +1,35 @@
+const clusters = [
+    {
+        name: "Productive Ironman",
+        description: "You appreciate your time and personal boundaries. That helps you achieve a lot in life and take new challenges. In fact, every true Ironman knows — family first."
+    },
+    {
+        name: "Sophisticated hedonist",
+        description: "Like a true MacPawian, you’re a 100% foodie. You also know stuff about a decent rest and how to live it up. Mastering the balance between social life and being by yourself is definitely your strong suit."
+    },
+    {
+        name: "Clubby nerd",
+        description: "Van Gogh, Mozart and Dickens would be your dream team by the day, while at night you’re likely to be spotted dancing on the dance floor shaking up champagne. They say that still waters run deep and you’re a proof!"
+    },
+    {
+        name: "Wild and free",
+        description: "You know what gluten free means and how to sort the garbage. You enjoy being a loner, but did you know your laugh is infectious? Smile!"
+    }
+];
+
 const Page = {
     state: {
         currentQuestion: 0,
         questions: null,
         answers: [],
+        scores: new Array(4).fill(0)
     },
 
     ui: {
         quizQuestionare: document.querySelector('.js-quiz-questionare'),
         quizResult: document.querySelector('.js-quiz-result'),
+        quizResultName: document.querySelector('.js-quiz-result-name'),
+        quizResultDescription: document.querySelector('.js-quiz-result-description'),
         quizProgress: document.querySelector('.js-quiz-progressbar'),
         questionsList: document.querySelector('.js-questions-list'),
         questions: [],
@@ -40,7 +62,7 @@ const Page = {
             const answersList = document.createElement('div');
             answersList.classList.add('question__answers-list');
 
-            questionProps.answers.forEach((answer, answerId) => {
+            questionProps.answers.forEach((answerProps, answerId) => {
                 const answerLabel = document.createElement('label');
                 answerLabel.classList.add('question__answer');
                 const answerRadio = document.createElement('input');
@@ -49,9 +71,10 @@ const Page = {
                 answerRadio.name = 'question' + questionId;
                 answerRadio.value = answerId.toString();
                 answerLabel.append(answerRadio);
-                answerLabel.innerHTML += answer;
+                answerLabel.innerHTML += answerProps.value;
 
                 answerLabel.onchange = () => {
+                    answerProps.scores.forEach((score, clusterId) => Page.state.scores[clusterId] += score);
                     Page.state.answers[questionId] = answerId;
                     Page.ui.error.classList.add('hidden');
                 }
@@ -95,11 +118,30 @@ const Page = {
         Page.ui.questions[Page.state.currentQuestion].classList.remove('hidden');
     },
 
+    getClusterId: () => {
+        let maxValue = Page.state.scores[0];
+        let maxValueId = 0;
+        Page.state.scores.forEach((clusterScore, clusterId) => {
+            if (clusterScore > maxValue) {
+                maxValue = clusterScore;
+                maxValueId = clusterId;
+            }
+        });
+        return maxValueId;
+    },
+
     showResult: () => {
+        console.log(Page.state.scores);
+
         Page.state.currentQuestion = null;
 
         Page.ui.quizQuestionare.classList.add('hidden');
         Page.ui.quizResult.classList.remove('hidden');
+
+        const clusterId = Page.getClusterId();
+
+        Page.ui.quizResultName.textContent = clusters[clusterId].name;
+        Page.ui.quizResultDescription.textContent = clusters[clusterId].description;
     },
 
     initListeners: () => {

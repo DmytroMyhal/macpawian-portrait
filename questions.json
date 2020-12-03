@@ -1,29 +1,276 @@
 [
   {
-    "title": "When someone asks me about my hobbies, I answer",
+    "title": "When someone asks me about my hobbies, I answer:",
     "answers": [
-      "My hobby is playing video games",
-      "I do sports because I like to eat",
-      "Going into a bookstore for one book and walking out with 15",
-      "Is watching memes a hobby?",
-      "Drawing, writing, photography, music…I have a creative mind!",
-      "I’m a serious gardener",
-      "I should get a hobby"
+      {
+        "value": "Drawing, writing, photography, music…I have a creative mind!",
+        "scores": [29.41, 25, 42.22, 24.24]
+      },
+      {
+        "value": "Going into a bookstore for one book and walking out with 15",
+        "scores": [17.65, 10.71, 17.78, 9.09]
+      },
+      {
+        "value": "I do sports because I like to eat",
+        "scores": [25.49, 21.43, 20, 9.09]
+      },
+      {
+        "value": "I should get a hobby",
+        "scores": [5.88, 14.29, 8.89, 12.12]
+      },
+      {
+        "value": "I’m a serious gardener",
+        "scores": [1.96, 3.57, 2.22, 3.03]
+      },
+      {
+        "value": "Is watching memes a hobby?",
+        "scores": [13.73, 3.57, 4.44, 27.27]
+      },
+      {
+        "value": "My hobby is playing video games",
+        "scores": [5.88, 21.43, 4.44, 15.15]
+      }
+    ]
+  },
+  {
+    "title": "What kind of a pet do you have?",
+    "answers": [
+      {
+        "value": "Yes, and it’s just purrrfect",
+        "scores": [54.9, 23.21, 55.56, 33.33]
+      },
+      {
+        "value": "No pets, no stress",
+        "scores": [45.1, 76.79, 44.44, 66.67]
+      }
+    ]
+  },
+  {
+    "title": "What kind of borshch do you prefer?",
+    "answers": [
+      {
+        "value": "Зі шматом сала та часником",
+        "scores": [86.27, 85.71, 84.44, 72.73]
+      },
+      {
+        "value": "No meat in borshch, I’m vegetarian/vegan",
+        "scores": [13.73, 14.29, 15.56, 27.27]
+      }
+    ]
+  },
+  {
+    "title": "But borshch what is your favourite food?",
+    "answers": [
+      {
+        "value": "Fancy Bowl",
+        "scores": [23.53, 8.93, 4.44, 3.03]
+      },
+      {
+        "value": "Life is short, eat dessert first",
+        "scores": [15.69, 3.57, 8.89, 15.15]
+      },
+      {
+        "value": "Pickles are the best (incl. Pickle-Rick)",
+        "scores": [7.84, 3.57, 4.44, 6.06]
+      },
+      {
+        "value": "Seafood - I see food I eat it",
+        "scores": [19.61, 28.57, 60, 18.18]
+      },
+      {
+        "value": "Who said Steak!",
+        "scores": [21.57, 37.5, 13.33, 27.27]
+      },
+      {
+        "value": "Yummy Pizza",
+        "scores": [11.76, 17.86, 8.89, 30.30]
+      }
+    ]
+  },
+  {
+    "title": "This is simple. iPhone or Android?",
+    "answers": [
+      {
+        "value": "iPhone",
+        "scores": [66.67, 75, 91.11, 75.76]
+      },
+      {
+        "value": "Android",
+        "scores": [33.33, 25, 8.89, 24.24]
+      }
+    ]
+  },
+  {
+    "title": "Better than mountains can be…",
+    "answers": [
+      {
+        "value": "Only mountains",
+        "scores": [58.82, 16.07, 11.11, 72.73]
+      },
+      {
+        "value": "The sparkling sea",
+        "scores": [29.41, 73.21, 86.67, 9.09]
+      },
+      {
+        "value": "Home sweet home",
+        "scores": [11.76, 10.71, 2.22, 18.18]
+      }
+    ]
+  },
+  {
+    "title": "We know this is tricky, but your favorite MacPawian is",
+    "answers": [
+      {
+        "value": "Fixel",
+        "scores": [21.57, 71.43, 37.78, 66.67]
+      },
+      {
+        "value": "Hoover",
+        "scores": [78.43, 28.57, 62.22, 33.33]
+      }
+    ]
+  },
+  {
+    "title": "What do you do at parties?",
+    "answers": [
+      {
+        "value": "Dance",
+        "scores": [15.69, 12.5, 31.11, 12.12]
+      },
+      {
+        "value": "Eat",
+        "scores": [21.57, 12.86, 22.22, 36.36]
+      },
+      {
+        "value": "Talk",
+        "scores": [31.37, 58.93, 20, 21.21]
+      },
+      {
+        "value": "Think about whether it’s okay to leave yet",
+        "scores": [31.37, 10.71, 26.67, 30.30]
+      }
     ]
   },
   {
     "title": "Do you wear glasses?",
     "answers": [
-      "Are you calling me four eyes? Glasses aren’t eyes.",
-      "Make fun of others wearing glasses"
+      {
+        "value": "Are you calling me four eyes? Glasses aren’t eyes.",
+        "scores": [39.22, 25, 62.22, 27.27]
+      },
+      {
+        "value": "Make fun of others wearing glasses",
+        "scores": [60.78, 75, 37.78, 72.73]
+      }
     ]
   },
   {
-    "title": "Do you wear a beard?",
+    "title": "What do you prefer to drink?",
     "answers": [
-      "AI live bearded",
-      "No beard",
-      "Come on, I’m a girl"
+      {
+        "value": "Drink more water, or you might die",
+        "scores": [5.88, 17.86, 28.89, 21.21]
+      },
+      {
+        "value": "Make tea, drink tea, love tea, repeat",
+        "scores": [9.8, 26.79, 26.67, 33.33]
+      },
+      {
+        "value": "More coffee, please",
+        "scores": [74.51, 19.64, 24.44, 36.36]
+      },
+      {
+        "value": "My life would not be so beautiful without alcohol",
+        "scores": [9.8, 35.71, 20, 9.09]
+      }
+    ]
+  },
+  {
+    "title": "When is your productivity pick?",
+    "answers": [
+      {
+        "value": "I’m a night owl",
+        "scores": [15.69, 33.93, 40, 51.52]
+      },
+      {
+        "value": "I’m an early bird",
+        "scores": [17.65, 42.86, 22.22, 27.27]
+      },
+      {
+        "value": "Permanently exhausted pigeon",
+        "scores": [66.67, 23.21, 37.78, 21.21]
+      }
+    ]
+  },
+  {
+    "title": "Do you prefer working in the office or from home?",
+    "answers": [
+      {
+        "value": "MacPaw office is my home",
+        "scores": [58.82, 67.86, 33.33, 66.67]
+      },
+      {
+        "value": "Zoom meetings are the best",
+        "scores": [41.18, 32.14, 66.67, 33.33]
+      }
+    ]
+  },
+  {
+    "title": "Which transport do you use?",
+    "answers": [
+      {
+        "value": "Well, I’m walking",
+        "scores": [20.45, 36.36, 29.55, 13.64]
+      },
+      {
+        "value": "Underground",
+        "scores": [17.14, 25.71, 22.86, 34.29]
+      },
+      {
+        "value": "Bicycle",
+        "scores": [12.5, 37.5, 12.5, 37.5]
+      },
+      {
+        "value": "Scooter baby",
+        "scores": [50, 0, 50, 0]
+      },
+      {
+        "value": "Motorcycle",
+        "scores": [25, 50, 25, 0]
+      },
+      {
+        "value": "Taxi",
+        "scores": [31.43, 25.71, 31.43, 11.43]
+      },
+      {
+        "value": "Never leave my car",
+        "scores": [38.6, 29.82, 17.54, 14.04]
+      }
+    ]
+  },
+  {
+    "title": "In your ideal world you’d move to…",
+    "answers": [
+      {
+        "value": "Closer to the sea",
+        "scores": [33.33, 32.14, 40, 3.03]
+      },
+      {
+        "value": "Scandinavian countries",
+        "scores": [35.29, 19.64, 13.33, 30.30]
+      },
+      {
+        "value": "London is a capital of the world",
+        "scores": [7.84, 8.93, 11.11, 6.06]
+      },
+      {
+        "value": "USA, of course",
+        "scores": [13.73, 10.71, 4.44, 21.21]
+      },
+      {
+        "value": "Nowhere, Ukraine’s my only homeland",
+        "scores": [9.8, 28.57, 31.11, 39.39]
+      }
     ]
   }
 ]
