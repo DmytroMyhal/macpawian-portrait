@@ -1,0 +1,29 @@
+[
+  {
+    "title": "When someone asks me about my hobbies, I answer",
+    "answers": [
+      "My hobby is playing video games",
+      "I do sports because I like to eat",
+      "Going into a bookstore for one book and walking out with 15",
+      "Is watching memes a hobby?",
+      "Drawing, writing, photography, music…I have a creative mind!",
+      "I’m a serious gardener",
+      "I should get a hobby"
+    ]
+  },
+  {
+    "title": "Do you wear glasses?",
+    "answers": [
+      "Are you calling me four eyes? Glasses aren’t eyes.",
+      "Make fun of others wearing glasses"
+    ]
+  },
+  {
+    "title": "Do you wear a beard?",
+    "answers": [
+      "AI live bearded",
+      "No beard",
+      "Come on, I’m a girl"
+    ]
+  }
+]
