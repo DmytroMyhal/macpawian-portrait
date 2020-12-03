@@ -36,12 +36,24 @@
     "title": "What kind of a pet do you have?",
     "answers": [
       {
-        "value": "Yes, and it’s just purrrfect",
-        "scores": [54.9, 23.21, 55.56, 33.33]
+        "value": "No pets, no stress",
+        "scores": [41.18, 71.43, 42.22, 60.61]
       },
       {
-        "value": "No pets, no stress",
-        "scores": [45.1, 76.79, 44.44, 66.67]
+        "value": "Being a cat person makes you happier, healthier, more creative and adventurous!",
+        "scores": [37.25, 17.86, 33.33, 24.24]
+      },
+      {
+        "value": "I'm a dedicated dog enthusiast",
+        "scores": [17.65, 7.14, 22.22, 15.15]
+      },
+      {
+        "value": "Keeping exotic pets doesn't make me weird",
+        "scores": [3.92, 1.79, 0,	0]
+      },
+      {
+        "value": "My little fishy",
+        "scores": [0, 1.79, 2.22, 0]
       }
     ]
   },
@@ -59,7 +71,7 @@
     ]
   },
   {
-    "title": "But borshch what is your favourite food?",
+    "title": "Besides borshch what is your favourite food?",
     "answers": [
       {
         "value": "Fancy Bowl",
