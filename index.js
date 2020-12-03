@@ -12,6 +12,7 @@ const Page = {
         questions: [],
         goButton: document.querySelector('.js-go-button'),
         backButton: document.querySelector('.js-back-button'),
+        error: document.querySelector('.js-error'),
     },
 
     loadQuestions: async () => {
@@ -48,7 +49,10 @@ const Page = {
                 answerLabel.append(answerRadio);
                 answerLabel.innerHTML += answer;
 
-                answerLabel.onchange = () => Page.state.answers[questionId] = answerId;
+                answerLabel.onchange = () => {
+                    Page.state.answers[questionId] = answerId;
+                    Page.ui.error.classList.add('hidden');
+                }
 
                 answersList.append(answerLabel);
             });
@@ -61,6 +65,8 @@ const Page = {
     },
 
     showPreviousQuestion: () => {
+        Page.ui.error.classList.add('hidden');
+
         Page.ui.questions[Page.state.currentQuestion--].classList.add('hidden');
         Page.ui.questions[Page.state.currentQuestion].classList.remove('hidden');
 
@@ -71,8 +77,6 @@ const Page = {
     },
 
     showNextQuestion: () => {
-        if (Page.state.answers[Page.state.currentQuestion] === undefined) return;
-
         Page.ui.questions[Page.state.currentQuestion++].classList.add('hidden');
 
         if (Page.state.currentQuestion > 0)
@@ -91,6 +95,11 @@ const Page = {
 
     initListeners: () => {
         Page.ui.goButton.addEventListener('click', () => {
+            if (Page.state.answers[Page.state.currentQuestion] === undefined) {
+                Page.ui.error.classList.remove('hidden');
+                return;
+            }
+
             Page.state.currentQuestion + 1 < Page.state.questions.length ? Page.showNextQuestion() : Page.showResult();
         });
 

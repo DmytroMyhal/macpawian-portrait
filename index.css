@@ -45,12 +45,21 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .quiz__result {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.quiz__error-note {
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+    color: darkred;
+    bottom: 64px;
 }
 
 .question {
