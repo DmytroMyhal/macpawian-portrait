@@ -67,19 +67,21 @@ const Page = {
             questionProps.answers.forEach((answerProps, answerId) => {
                 const answerLabel = document.createElement('label');
                 answerLabel.classList.add('question__answer');
+                answerLabel.setAttribute('for', 'answer' + questionId + answerId);
                 const answerRadio = document.createElement('input');
                 answerRadio.classList.add('question__answer-input');
+                answerRadio.id = "answer" + questionId + answerId;
                 answerRadio.type = 'radio';
                 answerRadio.name = 'question' + questionId;
                 answerRadio.value = answerId.toString();
-                answerLabel.append(answerRadio);
                 answerLabel.innerHTML += answerProps.value;
 
-                answerLabel.onchange = () => {
+                answerRadio.onchange = () => {
                     Page.state.answers[questionId] = answerId;
                     Page.ui.error.classList.add('hidden');
                 }
 
+                answersList.append(answerRadio);
                 answersList.append(answerLabel);
             });
 
