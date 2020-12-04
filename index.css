@@ -85,7 +85,7 @@ h2 {
     padding: 60px;
     display: flex;
     flex-direction: column;
-    min-height: 600px;
+    min-height: 680px;
 }
 
 .quiz__progressbar {
@@ -142,6 +142,11 @@ h2 {
     display: none;
 }
 
+.quiz__result-cover {
+    max-width: 600px;
+    border-radius: 20px;
+}
+
 .quiz__result-description {
     max-width: 600px;
     line-height: 28px;
@@ -152,7 +157,7 @@ h2 {
     font-size: 12px;
     text-align: center;
     position: absolute;
-    bottom: -80px;
+    bottom: -20px;
     line-height: 18px;
 }
 
@@ -283,5 +288,13 @@ input:checked + .question__answer:after {
 
     .quiz__error-note {
         bottom: 45px;
+    }
+
+    .quiz__result-cover {
+        width: 100%;
+    }
+
+    .quiz__result-note {
+        bottom: -40px;
     }
 }

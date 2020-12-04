@@ -30,7 +30,7 @@ const Page = {
         quizStartPage: document.querySelector('.js-start-page'),
         quizQuestionare: document.querySelector('.js-quiz-questionare'),
         quizResult: document.querySelector('.js-quiz-result'),
-        quizResultName: document.querySelector('.js-quiz-result-name'),
+        quizResultCover: document.querySelector('.js-quiz-result-cover'),
         quizResultDescription: document.querySelector('.js-quiz-result-description'),
         quizProgress: document.querySelector('.js-quiz-progressbar'),
         questionsList: document.querySelector('.js-questions-list'),
@@ -158,7 +158,7 @@ const Page = {
 
         const clusterId = Page.getClusterId();
 
-        Page.ui.quizResultName.textContent = clusters[clusterId].name;
+        Page.ui.quizResultCover.src = "cluster" + (clusterId + 1) + ".png";
         Page.ui.quizResultDescription.textContent = clusters[clusterId].description;
     },
 
