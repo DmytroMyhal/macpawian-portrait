@@ -6,25 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Macpawian Portrait</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <h1>Macpawian Portrait</h1>
     <section class="quiz">
         <div class="quiz__progressbar">
             <div class="quiz__progressbar-value js-quiz-progressbar"></div>
         </div>
         <div class="quiz__content">
-            <div class="quiz__questionare visibility-animated js-quiz-questionare">
+            <div class="quiz__result visibility-animated hidden js-quiz-result">
+                <h2>You are: <span class="quiz__result-name js-quiz-result-name"></span></h2>
+                <div class="quiz__result-description js-quiz-result-description"></div>
+            </div>
+            <div class="quiz__questionare visibility-animated hidden js-quiz-questionare">
                 <div class="quiz__questions-list js-questions-list"></div>
                 <div class="quiz__buttons-container">
-                    <button class="button hidden quiz__back-button js-back-button">Previous question</button>
-                    <button class="button button_primary quiz__go-button js-go-button">Next question</button>
+                    <button class="button hidden quiz__back-button js-back-button">Prev</button>
+                    <button class="button button_primary quiz__go-button js-go-button">Next</button>
                 </div>
                 <div class="quiz__error-note hidden visibility-animated-without-delay js-error">Hey, you still haven't answer this question!</div>
             </div>
-            <div class="quiz__result hidden js-quiz-result">
-                <h2>You are: <span class="quiz__result-name js-quiz-result-name"></span></h2>
-                <div class="quiz__result-description js-quiz-result-description"></div>
+            <div class="quiz__start-page js-start-page">
+                <h2 class="quiz__start-page-title">Hello, stranger!</h2>
+                <div class="quiz__start-page-description">Let's figure out what type of MacPawian you are!</div>
+                <button class="button button_primary quiz__start-button js-start-button">Let's do it!</button>
             </div>
         </div>
     </section>

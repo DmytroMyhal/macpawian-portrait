@@ -26,6 +26,8 @@ const Page = {
     },
 
     ui: {
+        startButton: document.querySelector('.js-start-button'),
+        quizStartPage: document.querySelector('.js-start-page'),
         quizQuestionare: document.querySelector('.js-quiz-questionare'),
         quizResult: document.querySelector('.js-quiz-result'),
         quizResultName: document.querySelector('.js-quiz-result-name'),
@@ -74,7 +76,6 @@ const Page = {
                 answerLabel.innerHTML += answerProps.value;
 
                 answerLabel.onchange = () => {
-                    answerProps.scores.forEach((score, clusterId) => Page.state.scores[clusterId] += score);
                     Page.state.answers[questionId] = answerId;
                     Page.ui.error.classList.add('hidden');
                 }
@@ -87,6 +88,11 @@ const Page = {
         });
 
         Page.ui.questionsList.append(fragment);
+    },
+
+    startQuiz: () => {
+        Page.ui.quizStartPage.classList.add('hidden');
+        Page.ui.quizQuestionare.classList.remove('hidden');
     },
 
     updateProgress: () => {
@@ -103,10 +109,20 @@ const Page = {
         if (Page.state.currentQuestion === 0)
             Page.ui.backButton.classList.add('hidden');
 
-        Page.ui.goButton.textContent = 'Next question';
+        Page.ui.goButton.textContent = 'Next';
+
+        const selectedAnswerId = Page.state.answers[Page.state.currentQuestion];
+        Page.state.questions[Page.state.currentQuestion].answers[selectedAnswerId].scores.forEach((score, clusterId) =>
+            Page.state.scores[clusterId] -= score
+        );
     },
 
     showNextQuestion: () => {
+        const selectedAnswerId = Page.state.answers[Page.state.currentQuestion];
+        Page.state.questions[Page.state.currentQuestion].answers[selectedAnswerId].scores.forEach((score, clusterId) =>
+            Page.state.scores[clusterId] += score
+        );
+
         Page.ui.questions[Page.state.currentQuestion++].classList.add('hidden');
 
         if (Page.state.currentQuestion > 0)
@@ -145,6 +161,8 @@ const Page = {
     },
 
     initListeners: () => {
+        Page.ui.startButton.addEventListener('click', Page.startQuiz);
+
         Page.ui.goButton.addEventListener('click', () => {
             if (Page.state.answers[Page.state.currentQuestion] === undefined) {
                 Page.ui.error.classList.remove('hidden');
